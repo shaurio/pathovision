@@ -1,0 +1,48 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/*
+{loading && (
+          <div style={{ marginTop: "1rem", textAlign: "center" }}>
+            <div style={styles.spinner} />
+            <p style={{ color: "#94a3b8", fontSize: "0.85rem" }}>
+              Analyzing image…
+            </p>
+          </div>
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+
+.shimmer {
+  animation: shimmer 1.5s linear infinite;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+}
+*/
