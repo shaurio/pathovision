@@ -35,20 +35,22 @@ Analyze the attached image and describe:
     const response: any = await client.responses.create({
   model: "gpt-4.1-mini",
   input: [
-    {
-      role: "user",
-      content: [
-        {
-          type: "input_text",
-          text: promptText,
-        },
-        {
-          type: "input_image",
-          image: imageBlob,
-        },
-      ] as any,  // <-- tells TypeScript to skip type check
-    },
-  ],
+  {
+    role: "user",
+    content: [
+      {
+        type: "input_text",
+        text: promptText,
+      },
+      {
+        type: "input_image",
+        image_url: "https://example.com/my-image.png", // or Base64 string
+        detail: "This is a sample image for analysis",
+      },
+    ], 
+  },
+],
+
 });
 
     const outputText = response.output_text ?? "No output returned";
