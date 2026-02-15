@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import ResponseInputContent from "openai";
 
 console.log("API KEY PRESENT:", !!process.env.OPENAI_API_KEY);
 
@@ -34,22 +35,22 @@ Analyze the attached image and describe:
 
     const response: any = await client.responses.create({
   model: "gpt-4.1-mini",
-  input: [
+  
+
+input: [
   {
     role: "user",
     content: [
-      {
-        type: "input_text",
-        text: promptText,
-      },
+      { type: "input_text", text: promptText },
       {
         type: "input_image",
-        image_url: "https://example.com/my-image.png", // or Base64 string
+        image_url: "https://example.com/my-image.png",
         detail: "This is a sample image for analysis",
       },
-    ], 
+    ] as ResponseInputContent[], // explicitly type the array
   },
 ],
+
 
 });
 
